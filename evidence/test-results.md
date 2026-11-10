@@ -1,19 +1,40 @@
-# WeatherWise verification record
+# WeatherWise – Test Results
 
-**Status:** Not run in the project preparation environment. Complete these checks on your Windows Android Studio installation and record actual outcomes.
+## Testing Environment
 
-| Check | Expected | Actual result | Evidence |
-|---|---|---|---|
-| Gradle sync | Succeeds | NOT RUN | Add build output |
-| `gradlew.bat testDebugUnitTest` | Unit tests pass | NOT RUN | Add test report |
-| `gradlew.bat lintDebug assembleDebug` | Lint and debug build complete | NOT RUN | Add output |
-| Emulator launch | Today, Plan outdoors, Places screens open | NOT RUN | Add real screenshots |
-| Search online | City results from Open-Meteo | NOT RUN | Add screenshot |
-| Offline cache | Previously fetched forecast remains available | NOT RUN | Record airplane-mode test |
-| Rotation | State remains after rotating emulator | NOT RUN | Record test |
-| Error handling | Network failure message appears | NOT RUN | Record test |
-| Room persistence | Saved place/forecast remains after restart | NOT RUN | Record test |
-| WorkManager | Worker syncs when constraints are met | NOT RUN | Record test with logs/WorkManager inspector |
-| Adaptive UI | Layout changes on wider virtual device | NOT RUN | Add screenshots |
+- **Application:** WeatherWise
+- **Platform:** Android Emulator (Android Studio)
+- **Test date:** 10/11/2026
+- **Device / Android version:** Medium Phone API 37.0
+- **Testing method:** Manual functional testing
 
-Do not mark a test PASS unless you actually observed the result.
+## Manual Test Results
+
+| Test | Expected Result | Status |
+|---|---|---|
+| Navigation | User can navigate between Today, Plan Outdoors and Places screens. | PASS |
+| Internet weather data | Weather forecasts are retrieved from the Open-Meteo API and displayed in the application. | PASS |
+| Interactivity | Search, place selection and other interactive controls respond to user actions. | PASS |
+| Screen rotation | The application preserves relevant state when the emulator rotates. | PASS |
+| Offline mode and Room | Previously cached weather information remains accessible without an internet connection. | PASS |
+| Error handling | The application handles unavailable network data and provides appropriate feedback. | PASS |
+| WorkManager background synchronisation | Background refresh runs successfully under the expected conditions. | NOT VERIFIED |
+| Automated unit tests | Gradle unit tests execute successfully. | NOT VERIFIED |
+| Database migration testing | Existing saved data remains intact after a database version upgrade. | NOT VERIFIED |
+
+## Screenshot Evidence
+
+The `ss/` directory contains screenshots captured from the Android emulator showing:
+
+- Today – weather forecast
+- Plan Outdoors – outdoor activity recommendation
+- Places – location search
+- Landscape view – screen rotation and state preservation
+
+These screenshots provide supporting evidence of the application interface and selected functionality. They do not independently prove background synchronisation or automated test execution.
+
+## Limitations
+
+The confirmed PASS results are based on manual testing in the Android emulator. WorkManager execution, automated unit tests and database migration behaviour have not yet been independently verified.
+
+Further testing would be required before claiming full production readiness.
