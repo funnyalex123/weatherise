@@ -44,8 +44,7 @@ Automated unit tests, database migration tests and WorkManager background execut
 
 ## AI interaction records
 
-Full conversation transcript or share links: https://chatgpt.com/share/6af3299b-b058-83eb-97e8-8c9efcc21178.
-
+Full conversation transcript or share links: https://chatgpt.com/share/6af3299b-b058-83eb-97e8-8c9efcc21178
 ## Critical Evaluation of AI Assistance
 
 ### Example 1 — GitHub Authentication
