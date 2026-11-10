@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1050" viewBox="0 0 1200 1050">
+<rect width="1200" height="1050" fill="#edf1f8"/>
+<text x="40" y="45" font-family="sans-serif" font-size="30" fill="#182b49" font-weight="700">WeatherWise / screen wireframes</text>
+<text x="40" y="76" font-family="sans-serif" font-size="17" fill="#182b49" font-weight="400">Conceptual layouts • illustrative weather values • not emulator screenshots</text>
+<rect x="40" y="105" width="340" height="540" rx="26" fill="white"/>
+<text x="62" y="144" font-family="sans-serif" font-size="21" fill="#182b49" font-weight="700">WeatherWise</text>
+<text x="62" y="185" font-family="sans-serif" font-size="26" fill="#182b49" font-weight="700">Today</text>
+<text x="62" y="211" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Your daily outlook</text>
+<rect x="52" y="592" width="316" height="40" rx="12" fill="#edf1f8"/>
+<text x="70" y="618" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Today       Plan outdoors       Places</text>
+<rect x="430" y="105" width="340" height="540" rx="26" fill="white"/>
+<text x="452" y="144" font-family="sans-serif" font-size="21" fill="#182b49" font-weight="700">WeatherWise</text>
+<text x="452" y="185" font-family="sans-serif" font-size="26" fill="#182b49" font-weight="700">Plan outdoors</text>
+<text x="452" y="211" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Next 24 forecast hours</text>
+<rect x="442" y="592" width="316" height="40" rx="12" fill="#edf1f8"/>
+<text x="460" y="618" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Today       Plan outdoors       Places</text>
+<rect x="820" y="105" width="340" height="540" rx="26" fill="white"/>
+<text x="842" y="144" font-family="sans-serif" font-size="21" fill="#182b49" font-weight="700">WeatherWise</text>
+<text x="842" y="185" font-family="sans-serif" font-size="26" fill="#182b49" font-weight="700">Your places</text>
+<text x="842" y="211" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Search and save towns</text>
+<rect x="832" y="592" width="316" height="40" rx="12" fill="#edf1f8"/>
+<text x="850" y="618" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Today       Plan outdoors       Places</text>
+<rect x="60" y="230" width="300" height="190" rx="18" fill="#315bba"/>
+<text x="80" y="268" font-family="sans-serif" font-size="24" fill="white" font-weight="700">Aberdeen</text>
+<text x="80" y="328" font-family="sans-serif" font-size="52" fill="white" font-weight="400">14°</text>
+<text x="80" y="363" font-family="sans-serif" font-size="15" fill="white" font-weight="400">Partly cloudy · hourly forecast</text>
+<text x="80" y="394" font-family="sans-serif" font-size="15" fill="white" font-weight="400">Rain 10% / Wind 12 km/h</text>
+<rect x="60" y="437" width="300" height="85" rx="18" fill="#e6eedc"/>
+<text x="78" y="465" font-family="sans-serif" font-size="18" fill="#182b49" font-weight="700">A good hour for a walk</text>
+<text x="78" y="499" font-family="sans-serif" font-size="16" fill="#182b49" font-weight="400">Plan outdoors →</text>
+<text x="62" y="554" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Last downloaded · Refresh forecast</text>
+<rect x="450" y="233" width="300" height="42" rx="18" fill="#edf1f8"/>
+<text x="469" y="260" font-family="sans-serif" font-size="17" fill="#182b49" font-weight="400">Walk       Cycle       Picnic</text>
+<rect x="450" y="291" width="300" height="66" rx="18" fill="#fff0d5"/>
+<text x="465" y="318" font-family="sans-serif" font-size="15" fill="#182b49" font-weight="400">Temperature / rain / wind rules</text>
+<text x="465" y="342" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Daylight + clear/cloudy conditions</text>
+<rect x="450" y="376" width="300" height="80" rx="18" fill="#e6eedc"/>
+<text x="466" y="405" font-family="sans-serif" font-size="18" fill="#182b49" font-weight="700">Tue 14:00       14°C</text>
+<text x="466" y="435" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Good fit for a walk</text>
+<rect x="450" y="472" width="300" height="80" rx="18" fill="#edf1f8"/>
+<text x="466" y="501" font-family="sans-serif" font-size="18" fill="#182b49" font-weight="700">Tue 15:00       13°C</text>
+<text x="466" y="531" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Outside preferences</text>
+<rect x="840" y="235" width="300" height="48" rx="18" fill="#edf1f8"/>
+<text x="857" y="266" font-family="sans-serif" font-size="16" fill="#182b49" font-weight="400">Town or city…</text>
+<rect x="840" y="297" width="300" height="43" rx="18" fill="#315bba"/>
+<text x="943" y="325" font-family="sans-serif" font-size="17" fill="white" font-weight="400">Search</text>
+<text x="842" y="382" font-family="sans-serif" font-size="20" fill="#182b49" font-weight="700">Saved places</text>
+<rect x="840" y="399" width="300" height="106" rx="18" fill="#edf1f8"/>
+<text x="857" y="430" font-family="sans-serif" font-size="19" fill="#182b49" font-weight="700">Aberdeen</text>
+<text x="857" y="457" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">Scotland, United Kingdom</text>
+<text x="857" y="488" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">View forecast        Remove</text>
+<text x="842" y="552" font-family="sans-serif" font-size="14" fill="#182b49" font-weight="400">No GPS permission required</text>
+<text x="40" y="704" font-family="sans-serif" font-size="24" fill="#182b49" font-weight="700">Landscape / wide window ≥700dp</text>
+<rect x="40" y="726" width="1120" height="267" rx="24" fill="white"/>
+<text x="65" y="767" font-family="sans-serif" font-size="23" fill="#182b49" font-weight="700">WeatherWise   /   Today</text>
+<rect x="65" y="787" width="520" height="165" rx="18" fill="#315bba"/>
+<text x="90" y="825" font-family="sans-serif" font-size="24" fill="white" font-weight="700">Aberdeen</text>
+<text x="90" y="892" font-family="sans-serif" font-size="48" fill="white" font-weight="400">14°</text>
+<text x="220" y="883" font-family="sans-serif" font-size="18" fill="white" font-weight="400">Partly cloudy</text>
+<rect x="605" y="787" width="530" height="165" rx="18" fill="#e6eedc"/>
+<text x="630" y="827" font-family="sans-serif" font-size="24" fill="#182b49" font-weight="700">Make room for outside</text>
+<text x="630" y="866" font-family="sans-serif" font-size="19" fill="#182b49" font-weight="400">A good hour for a walk: Tue 14:00</text>
+<text x="630" y="914" font-family="sans-serif" font-size="18" fill="#182b49" font-weight="400">Plan outdoors →</text>
+</svg>
