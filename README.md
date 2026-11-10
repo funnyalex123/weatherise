@@ -1,6 +1,10 @@
 # WeatherWise — Android Weather & Outdoor Planner
 
-**Coursework Module:** CM3147 — Native Mobile Apps  
+Student Name: Aleksandra Sipowicz
+Student ID: 2607302
+Module: CM3147 – Native Mobile Apps
+Application: WeatherWise
+
 **Stack:** Kotlin, Jetpack Compose (Material 3), Room Database, WorkManager, Coroutines & Flow, Retrofit/HttpURLConnection, Open-Meteo REST API.
 
 WeatherWise is a modern, privacy-first Android application designed to help users search locations, view hourly forecasts, plan outdoor activities (walking, cycling, picnics), and maintain offline access to saved locations.
@@ -75,9 +79,17 @@ Output APK location: `app/build/outputs/apk/debug/app-debug.apk`
 5. Record real results in `evidence/test-results.md`. The project has not been independently built or emulator-tested in this preparation environment.
 
 ## Coursework submission steps
-- Replace `[Your Name]` and `[Your ID]` placeholders in documentation and provide your actual student details.
+- Replace `your name` and `student id` placeholders in documentation and provide your actual student details.
 - Check `design.md`, `security-review.md`, `tool-review.md`, and `ai-log.md` against what you really implemented and tested.
 - Add two **genuine** examples of AI mistakes you found and corrected; do not invent experiences.
 - Check code citations and API attribution. Capture real UI screenshots/wireframes and test evidence.
 - Create your own GitHub repository, commit changes over time, add the module coordinator, push the final branch, then submit a GitHub-downloaded ZIP and URL to Moodle.
 - Before a public Play Store release, replace the sample application ID `com.example.weatherwise`, review the privacy policy and Play Console requirements.
+
+
+Generative AI Usage Declaration
+
+I acknowledge the use of ChatGPT (OpenAI, https://chatgpt.com/) to support the development of my WeatherWise Android application and coursework documentation.
+ChatGPT was used to help plan the application architecture, suggest Kotlin and Jetpack Compose code, explain Android Studio and GitHub workflows, assist with debugging, and improve the structure and wording of documentation.
+I reviewed the AI-generated suggestions, tested application features in the Android emulator, and made decisions about the final implementation. AI-generated outputs were not assumed to be correct without verification.
+
