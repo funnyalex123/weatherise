@@ -1,95 +1,125 @@
 # WeatherWise — Android Weather & Outdoor Planner
 
-Student Name: Aleksandra Sipowicz
-Student ID: 2607302
-Module: CM3147 – Native Mobile Apps
-Application: WeatherWise
+**Student Name:** Aleksandra Sipowicz  
+**Student ID:** 2607302  
+**Module:** CM3147 – Native Mobile Apps  
+**Application:** WeatherWise
 
-**Stack:** Kotlin, Jetpack Compose (Material 3), Room Database, WorkManager, Coroutines & Flow, Retrofit/HttpURLConnection, Open-Meteo REST API.
+## Project Overview
 
-WeatherWise is a modern, privacy-first Android application designed to help users search locations, view hourly forecasts, plan outdoor activities (walking, cycling, picnics), and maintain offline access to saved locations.
+WeatherWise is an Android weather application designed to help users search for locations, view weather forecasts and plan outdoor activities such as walking, cycling and picnics.
 
----
+The application uses Kotlin, Jetpack Compose (Material 3), Room Database, WorkManager, Coroutines, StateFlow and the Open-Meteo REST API. It provides three main screens and supports offline access to previously cached weather information.
 
-## 🌟 Grade A Rubric Compliance
+## Implemented Features
 
-The source code **attempts** the Must, Should and three Could areas. These claims must be validated by compiling, running and testing the application; a grade is not guaranteed.
+### User Interface and Interaction
 
-### 1. Must Have Requirements (Grade D Baseline)
-- **Basic UI:** Built using Jetpack Compose with Material 3 design tokens (`Scaffold`, `TopAppBar`, `Card`, `Button`, `OutlinedTextField`, `FilterChip`, `Switch`).
-- **Basic Interactivity:** Interactive town search, place selection, activity filtering, manual forecast refresh, and place removal dialogs.
-- **State Management:** Preserves state across screen rotations and process death via `WeatherViewModel` using `SavedStateHandle` and Compose `rememberSaveable`.
+- **Jetpack Compose:** Material 3 components, including cards, buttons, text fields, navigation bars and activity filters.
+- **Interactive Controls:** Location search, place selection, activity preferences, manual forecast refresh and place removal.
+- **State Management:** ViewModel, StateFlow, SavedStateHandle and Compose state preservation.
 
-### 2. Should Have Requirements (Grade B Tier)
-- **Lists in UI:** Uses `LazyColumn` and `LazyRow` to render dynamic hourly forecasts and saved location lists.
-- **Architecture Components:** Strictly follows Modern Android Architecture (MVVM) with `AndroidViewModel`, immutable UI states (`WeatherState`, `SearchState`), `StateFlow`, and `collectAsStateWithLifecycle()`.
-- **Multi-Screen Navigation:** Implements `NavHost` with `NavigationBar` managing 3 distinct screens:
-  1. **Today:** High-level daily outlook, hero card, 24-hour visual trend chart, and upcoming forecast hours.
-  2. **Plan Outdoors:** Outdoor suitability analysis with activity chips (Walk, Cycle, Picnic) and strict preference filters.
-  3. **Places:** Town search via geocoding API and saved location management.
-- **Internet Data:** Asynchronously queries the Open-Meteo REST API (`geocoding-api.open-meteo.com` and `api.open-meteo.com`) on `Dispatchers.IO`.
-- **Error Handling:** Gracefully handles network failures, empty search results, and missing forecast data with user-friendly error banners (`Message`) and `SnackbarHost`.
+### Application Architecture
 
-### 3. Could Have Requirements (Grade A Distinction)
-- **Requirement 6 — Room Database Persistence:** Full local offline persistence via `WeatherDatabase`, `WeatherDao`, `@Entity Place`, and `@Entity CachedForecast`. When offline, the app seamlessly loads saved forecasts from Room.
-- **Requirement 7 — WorkManager Background Synchronization:** `ForecastWorker` runs a periodic background sync every 6 hours (`PeriodicWorkRequestBuilder`) with network constraints to automatically refresh saved forecasts in the background.
-- **Requirement 8 — Advanced Features & Independent Research:**
-  - **Adaptive Multi-Pane Layout:** Supports foldables and tablets via `BoxWithConstraints` (`maxWidth >= 700.dp`), rendering side-by-side hero and planner panes.
-  - **Interactive 24-Hour Trend Chart:** Custom visual timeline (`ForecastChart`) displaying temperature trends and rain probability bars with suitability highlights.
-  - **Dynamic Theme & Dark Mode:** Auto-adapts to Android system dark mode and light mode preferences.
+WeatherWise uses an MVVM-based architecture with separate UI, ViewModel, repository and data layers.
 
----
+The application includes three screens:
 
-## 🛠️ Build & Testing Instructions
+1. **Today:** Displays current weather information, forecast summaries, hourly weather trends and a visual temperature chart.
+2. **Plan Outdoors:** Helps users assess weather suitability for walking, cycling and picnics using activity filters.
+3. **Places:** Allows users to search for towns and manage saved locations.
 
-### Requirements
-- **IDE:** Android Studio with Gradle/AGP support for the versions in the project
-- **SDK:** Android SDK 36 (minSdk 26, targetSdk 36)
-- **JDK:** Java 17
+### Data and Networking
 
-### Run Application
+- **Open-Meteo API:** Retrieves weather forecasts and location search results.
+- **Room Database:** Stores saved places and cached forecasts for offline access.
+- **Coroutines and Flow:** Support asynchronous operations and reactive UI updates.
+- **Error Handling:** Provides feedback for network failures, empty results and unavailable weather information.
+
+### Additional Features
+
+- **WorkManager:** A `ForecastWorker` is configured to request periodic background synchronisation every six hours with network constraints. Successful background execution has not yet been independently verified.
+- **Adaptive Layout:** Uses responsive Compose layouts for different screen widths.
+- **Weather Visualisation:** Includes an interactive 24-hour forecast chart.
+- **Dark Mode:** Supports Android system light and dark themes.
+
+## Development Environment
+
+- **IDE:** Android Studio
+- **Programming Language:** Kotlin
+- **UI Framework:** Jetpack Compose with Material 3
+- **Android SDK:** minSdk 26, targetSdk 36
+- **Java:** JDK 17
+- **Test Device:** Android Emulator — Medium Phone, API 37.0
+- **Operating System Used for Development:** macOS
+
+## Running the Application
+
+1. Download or clone the GitHub repository.
+2. Open Android Studio.
+3. Select **File > Open** and choose the project folder containing `settings.gradle.kts`.
+4. Allow Gradle to synchronise and install any required SDK components.
+5. Select the `app` run configuration and an Android emulator.
+6. Click **Run** to launch WeatherWise.
+
+The following commands can also be used from the project directory to run automated tests and build a debug APK:
+
 ```bash
-# Run unit tests
 ./gradlew testDebugUnitTest
-
-# Assemble debug APK
 ./gradlew assembleDebug
 ```
-Output APK location: `app/build/outputs/apk/debug/app-debug.apk`
 
----
+These commands are provided for verification; their successful execution has not been independently confirmed in the submitted testing record.
 
-## 🧪 Validation & Testing Results
+## Testing and Validation
 
-- **Unit tests provided, not executed in this preparation environment** (`DomainTest`). Intended coverage:
-  - Weather condition mapping (`condition`).
-  - JSON payload parsing (`parseForecast`).
-  - Activity suitability calculations across boundaries (`suitable`).
-  - DST time zone formatting across daylight savings (`formatTime`).
-  - Bounded 24-hour upcoming time window filtering (`upcoming`).
-- **Build Status:** NOT VERIFIED. Run `gradlew.bat assembleDebug` on Windows; resolve any reported errors.
-- **Device Verification:** NOT VERIFIED. Launch and capture evidence on your Android Studio emulator.
+WeatherWise was launched and manually tested in Android Studio using the Medium Phone emulator with API 37.0 on 10 November 2026.
 
+The following manual checks were recorded as successful:
 
-## Open in Android Studio (Windows)
-1. Extract the ZIP, choose **File > Open**, and select the `WeatherWise` folder containing `settings.gradle.kts`.
-2. Allow Gradle sync and install Android SDK Platform 36 if prompted. Set Gradle JDK to 17 if needed.
-3. Select the `app` run configuration and an Android emulator, then click Run.
-4. If Run is missing, read the Build/Sync error first. In the terminal, try `gradlew.bat assembleDebug`.
-5. Record real results in `evidence/test-results.md`. The project has not been independently built or emulator-tested in this preparation environment.
+- Navigation between Today, Plan Outdoors and Places — **PASS**
+- Weather data retrieval and display — **PASS**
+- Location search and interactive controls — **PASS**
+- Screen rotation and UI state behaviour — **PASS**
+- Offline access to previously cached data — **PASS**
+- Network error handling — **PASS**
 
-## Coursework submission steps
-- Replace `your name` and `student id` placeholders in documentation and provide your actual student details.
-- Check `design.md`, `security-review.md`, `tool-review.md`, and `ai-log.md` against what you really implemented and tested.
-- Add two **genuine** examples of AI mistakes you found and corrected; do not invent experiences.
-- Check code citations and API attribution. Capture real UI screenshots/wireframes and test evidence.
-- Create your own GitHub repository, commit changes over time, add the module coordinator, push the final branch, then submit a GitHub-downloaded ZIP and URL to Moodle.
-- Before a public Play Store release, replace the sample application ID `com.example.weatherwise`, review the privacy policy and Play Console requirements.
+The following areas remain unverified:
 
+- WorkManager background synchronisation — **NOT VERIFIED**
+- Automated unit test execution — **NOT VERIFIED**
+- Room database migration testing — **NOT VERIFIED**
 
-Generative AI Usage Declaration
+Detailed results and limitations are documented in `evidence/test-results.md`. Application screenshots are stored in the `ss/` folder.
+
+## Project Documentation
+
+The repository contains the following coursework documentation:
+
+- `design.md` — application design, architecture and implementation decisions.
+- `security-review.md` — security considerations, risks and mitigations.
+- `tool-review.md` — evaluation of tools used during development.
+- `ai-log.md` — record and critical evaluation of AI assistance.
+- `evidence/test-results.md` — manual testing evidence and limitations.
+- `ss/` — screenshots of the application.
+
+## Generative AI Usage Declaration
 
 I acknowledge the use of ChatGPT (OpenAI, https://chatgpt.com/) to support the development of my WeatherWise Android application and coursework documentation.
-ChatGPT was used to help plan the application architecture, suggest Kotlin and Jetpack Compose code, explain Android Studio and GitHub workflows, assist with debugging, and improve the structure and wording of documentation.
-I reviewed the AI-generated suggestions, tested application features in the Android emulator, and made decisions about the final implementation. AI-generated outputs were not assumed to be correct without verification.
 
+ChatGPT assisted with application planning, Kotlin and Jetpack Compose code suggestions, architecture, debugging guidance, Android Studio and GitHub workflows, and documentation preparation.
+
+I reviewed AI-generated suggestions, manually tested the application in the Android emulator and made decisions about the final implementation. I did not assume that AI-generated code or explanations were correct without verification.
+
+Further details, including problems encountered and corrections made, are recorded in `ai-log.md`.
+
+## References
+
+- Open-Meteo Weather API: https://open-meteo.com/en/docs
+- Open-Meteo Geocoding API: https://open-meteo.com/en/docs/geocoding-api
+- Android Developers: https://developer.android.com/
+- Jetpack Compose: https://developer.android.com/compose
+- Room Database: https://developer.android.com/training/data-storage/room
+- WorkManager: https://developer.android.com/topic/libraries/architecture/workmanager
+
+WeatherWise was developed as coursework for CM3147 – Native Mobile Apps.
